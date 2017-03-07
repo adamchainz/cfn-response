@@ -3,14 +3,14 @@ import unittest
 from functools import partial
 
 try:
-    from urllib2 import HTTPError
-except ImportError:
     from urllib.error import HTTPError
+except ImportError:
+    from urllib2 import HTTPError
 
 try:
-    from mock import patch, Mock, call
+    from unittest.mock import patch, Mock
 except ImportError:
-    from unittest.mock import patch, Mock, call
+    from mock import patch, Mock
 
 from cfnresponse import send
 

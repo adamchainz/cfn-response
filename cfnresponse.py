@@ -1,10 +1,10 @@
 import json
 
 try:
-    from urllib2 import HTTPError, build_opener, HTTPHandler, Request
-except ImportError:
     from urllib.error import HTTPError
     from urllib.request import build_opener, HTTPHandler, Request
+except ImportError:
+    from urllib2 import HTTPError, build_opener, HTTPHandler, Request
 
 
 SUCCESS = "SUCCESS"
